@@ -17,13 +17,15 @@ params = {
             'figure.figsize': '30, 24'  # set figure size
         }
 d = [12,32,45,33,99,12]
-o = [0,1,2,3,4,5,6]
+o = [0,1,2,3,4,5]
+data = [o,d]
+ww = np.transpose(data)
+
 pylab.rcParams.update(params)
-zip(d)
-with open('person.csv', 'w') as csvFile:
+with open('person.csv', 'w', newline='') as csvFile:
     writer = csv.writer(csvFile)
-    writer.writerow(d)
-csvFile.close()
+    writer.writerows(list(zip(d,o)))
+    csvFile.close()
 
 # Create the PdfPages object to which we will save the pages:
 # The with statement makes sure that the PdfPages object is closed properly at
