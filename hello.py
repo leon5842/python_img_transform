@@ -19,6 +19,7 @@ params = {
 d = [12,32,45,33,99,12]
 o = [0,1,2,3,4,5]
 data = [o,d]
+
 ww = np.transpose(data)
 
 pylab.rcParams.update(params)
@@ -37,8 +38,9 @@ with PdfPages('multipage_pdf.pdf') as pdf:
     plt.title('Page One')
     plt.xlabel("ff", fontsize=100)
     pdf.savefig()
+    plt.show()
     plt.close()
-
+    
 
 
 
